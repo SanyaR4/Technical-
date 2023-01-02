@@ -1,0 +1,28 @@
+#include<stdio.h>
+void main()
+{
+    int i,j,k,size1,size2;
+    printf("Enter the size of arrays\n");
+    scanf("%d %d",&size1,&size2);
+    int a[size1],b[size2],merge[size1+size2];
+    printf("Enter the elements of array1\n");
+    for(int index=0;index<size1;index++)
+        scanf("%d",&a[index]);
+    printf("Enter the elements of array2\n");
+    for(int index=0;index<size2;index++)
+        scanf("%d",&b[index]);
+    for(i=0,j=0,k=0;i<size1&&j<size2;k++)
+    {
+        if(a[i]<b[j])
+        merge[k]=a[i++];
+        else
+        merge[k]=b[j++];
+    }
+    while(i<size1)
+        merge[k++]=a[i++];
+    while(j<size2)
+        merge[k++]=b[j++];
+    printf("Merged Array\n");
+    for(int index=0;index<size1+size2;index++)
+    printf("%d\n",merge[index]);
+}
