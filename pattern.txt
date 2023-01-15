@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main(){
+   int n;
+   scanf("%d", &n);
+      for (int r = 1; r<=n; r++){
+       for (int c = r;c>=1;c--){
+ printf("%c", c+64);
+       }
+       for (int c=1; c<=n-r;c++)
+            printf("  ");
+       for (int c = r;c>=1;c--){
+             printf("%c", c+64);
+       }
+       printf("\n");
+   } 
+   for (int r = n; r>=1; r--){
+       for (int c = r;c>=1;c--){
+            printf("%c", c+64);
+       }
+       for (int c=1; c<=n-r;c++)
+            printf("  ");
+       for (int c = r;c>=1;c--){
+             printf("%c", c+64);
+       }
+       printf("\n");
+   }
+
+    return 0;
+}
