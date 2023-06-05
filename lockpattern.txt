@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include<stdbool.h>
+void displayPattern(int pattern[2][2])
+{
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            printf("%d",pattern[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+bool checkPattern(int enterPattern[2][2],int predefinedPattern[2][2])
+{
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+        if(enterPattern[i][j]!= predefinedPattern[i][j])
+        return false;
+    }
+}
+    return true;
+}
+int main()
+{
+    int predefinedPattern[2][2]={{1,2},{3,4}};
+    int enterPattern[2][2];
+    printf("enter pattern\n");
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            scanf("%d",&enterPattern[i][j]);
+        }
+    }
+    displayPattern(enterPattern);
+    if(checkPattern(enterPattern,predefinedPattern))
+    {
+        printf("unlock\n");
+    }
+    else
+    {
+        printf("locked\n");
+    }
+    return 0;
+}
+
+
