@@ -1,0 +1,23 @@
+//Program to read content from a file
+#include<stdio.h>
+int main()
+{
+    FILE *fptr;
+    char filename[30];
+    printf("Enter file name:");
+    scanf("%s",filename);
+    fptr = fopen(filename,"r");
+    if(fptr==NULL)
+    {
+        printf("%s does not exist!",filename);
+        return 0;
+    }
+    while(!feof(fptr))
+    {
+        char sentence[80];
+        fgets(sentence,80,fptr);
+        printf("%s",sentence);
+    }
+    fclose(fptr);
+    return 0;
+}
